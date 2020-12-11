@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
+################## Primeira Atualização da lista e pacote #########
+
+echo "Atualização das listas"
+    sudo apt update -y
+echo ""
+
+echo "Upgrade dos pacotes"
+    sudo apt upgrade -y
+echo ""
+
 ################## Instalações dos pacotes via APT ############
 echo "Instalação"
     sudo apt install snapd -y
-echo ""
-
-echo "Instalação Google Chrome"
-    sudo apt install google-chrome -y
 echo ""
 
 echo "Instalação Git"
@@ -29,8 +35,16 @@ echo "Instalação Rdesktop"
     sudo apt install rdesktop -y
 echo ""
 
-echo "Instalação Gnome-Tweaks (Ajustes do Gnome)"
-    sudo apt install gnome-tweaks -y
+echo "Instalação do Discord"
+    sudo snap install discord
+echo ""
+
+echo "Instalação do PowerShell"
+    sudo snap install powershell --classic
+echo ""
+
+#echo "Instalação Gnome-Tweaks (Ajustes do Gnome)"
+    #sudo apt install gnome-tweaks -y
 
 #####################---------------------------###############
 
@@ -56,6 +70,14 @@ echo "Instalação Spotify"
     sudo snap install spotify
 echo ""
 
+echo "Instalação Kubernetes"
+    sudo snap install kubectl --classic
+echo ""
+
+echo "Instalação Docker"
+    sudo snap install docker
+echo ""
+
 ############# Instalações dos pacotes baixados via wget ##########
 
 echo "Download do pacote mais recente do Google chrome"
@@ -66,6 +88,18 @@ echo ""
 
 #####################---------------------------###############
 
+echo "Instalação do Kind"
+echo ""
+    wget -O /tmp/kind https://github.com/kubernetes-sigs/kind/releases/download/v0.4.0/kind-linux-amd64
+echo ""
+
+echo ""
+    chmod +x /tmp/kind
+echo ""
+
+echo ""
+    sudo mv /tmp/kind /usr/local/bin/kind
+echo ""
 
 #################### Atualizações, upgrades e limpezas ##############
 
